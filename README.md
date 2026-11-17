@@ -12,7 +12,7 @@
 | `404.html` | 없는 주소로 들어왔을 때 보이는 페이지 |
 | `assets/css/site.css` | 모든 페이지가 함께 쓰는 스타일 |
 | `assets/js/site.js` | 메인 페이지의 스크롤 연출 (로고의 점 속으로 들어가면 태양계가 나옴) |
-| `assets/img/` | 파비콘, 로또리 아이콘 |
+| `assets/img/` | 파비콘, 로또리 아이콘, 링크 미리보기 이미지(`og.png`) |
 | `assets/vendor/` | three.js 0.160.0 (MIT 라이선스, `three.LICENSE.txt`) |
 | `.nojekyll` | GitHub Pages 가 파일을 가공하지 않고 그대로 올리게 함 |
 
