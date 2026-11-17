@@ -9,10 +9,12 @@
 | 경로 | 내용 |
 |---|---|
 | `index.html` | 메인 페이지 |
+| `lottory/privacy/index.html` | 로또리 개인정보처리방침 (`/lottory/privacy/`) |
+| `lottory/account-deletion/index.html` | 로또리 계정 삭제 안내 (`/lottory/account-deletion/`) |
 | `404.html` | 없는 주소로 들어왔을 때 보이는 페이지 |
 | `assets/css/site.css` | 모든 페이지가 함께 쓰는 스타일 |
 | `assets/js/site.js` | 메인 페이지의 스크롤 연출 (로고의 점 속으로 들어가면 태양계가 나옴) |
-| `assets/img/` | 파비콘, 로또리 아이콘, 링크 미리보기 이미지(`og.png`) |
+| `assets/img/` | 파비콘, 로또리 아이콘, 링크 미리보기 이미지(`og.png`), 문서 페이지용 로고(`logo-on-dark.svg`) |
 | `assets/vendor/` | three.js 0.160.0 (MIT 라이선스, `three.LICENSE.txt`) |
 | `.nojekyll` | GitHub Pages 가 파일을 가공하지 않고 그대로 올리게 함 |
 
@@ -28,8 +30,17 @@ python -m http.server 8000
 
 ## 고칠 때
 
-- 문구와 회사 정보: `index.html`
+- 문구: `index.html`
+- 회사 정보: 메인 페이지와 문서 페이지 두 개의 맨 아래에 똑같이 들어 있습니다. 바꿀 때는 세 파일을 함께 고칩니다.
 - 행성 추가(새 앱): `assets/js/site.js` 의 `PLANETS` 와 `shades`
 - 3D 를 쓸 수 없는 환경에서는 우주가 검은 바탕으로만 보입니다.
-- 기기에서 '동작 줄이기'(Windows 의 애니메이션 효과 끄기 등)를 켠 경우에는 스크롤 연출은 그대로 나오고, 행성이 스스로 도는 움직임만 멈춥니다.
+- 스크롤 연출과 행성의 움직임은 기기의 '동작 줄이기'(Windows 의 애니메이션 효과 끄기 등) 설정과 상관없이 항상 나옵니다.
 - 스크립트가 꺼진 브라우저에서는 연출 없이 한 화면으로 보입니다.
+
+## 문서 페이지 (준비 중)
+
+개인정보처리방침과 계정 삭제 안내는 지금 목차와 항목 제목만 있습니다. 내용이 확정되면:
+
+1. 각 항목의 안내 문장을 실제 내용으로 바꿉니다.
+2. 두 파일의 `<meta name="robots" content="noindex">` 줄과 '준비 중' 안내(`doc-note`)를 지웁니다.
+3. `index.html` 의 로또리 칸에 두 페이지로 가는 링크를 넣습니다. (넣을 자리에 주석이 있습니다.)

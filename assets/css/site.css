@@ -22,7 +22,7 @@ body {
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
   word-break: keep-all;
 }
-p, h1, h2, h3, ul, li { margin: 0; padding: 0; font-weight: inherit; font-size: inherit; list-style: none; }
+p, h1, h2, h3, ul, ol, li { margin: 0; padding: 0; font-weight: inherit; font-size: inherit; list-style: none; }
 a { color: inherit; text-decoration: none; }
 a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 6px; }
 img, svg, canvas { display: block; }
@@ -117,6 +117,31 @@ img, svg, canvas { display: block; }
 }
 .ulink:hover { text-decoration-color: var(--text); }
 
+/* ── 문서 페이지: 개인정보처리방침, 계정 삭제 안내 ───────────── */
+.head-page { position: static; padding: 0; color: var(--text); }
+.page-logo { width: 112px; height: 17px; }
+.doc { padding-top: clamp(36px, 6vw, 80px); }
+.doc-app { font-size: 15px; color: var(--text-3); }
+.doc h1 { margin-top: 4px; font-size: clamp(30px, 4.4vw, 48px); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+.doc-meta { margin-top: 12px; font-size: 15px; color: var(--text-3); }
+.doc-note {
+  max-width: 720px; margin-top: 28px; padding: 16px 20px;
+  border: 1px solid var(--line); border-radius: 14px;
+  font-size: 15px; color: var(--text-2);
+}
+.doc-cols {
+  display: grid; grid-template-columns: 232px minmax(0, 720px); gap: clamp(40px, 6vw, 88px);
+  align-items: start; margin-top: clamp(40px, 6vw, 72px);
+}
+.toc { position: sticky; top: 28px; font-size: 14px; line-height: 1.5; color: var(--text-2); }
+.toc-title { margin-bottom: 14px; color: var(--text-3); }
+.toc li + li { margin-top: 10px; }
+.toc a { transition: color .15s; }
+.toc a:hover { color: var(--text); }
+.doc-sec { padding: 30px 0 34px; border-top: 1px solid var(--line); scroll-margin-top: 20px; }
+.doc-sec h2 { font-size: clamp(19px, 2vw, 22px); font-weight: 600; line-height: 1.35; letter-spacing: -.025em; }
+.doc-sec p { margin-top: 12px; color: var(--text-2); text-wrap: pretty; }
+
 /* ── 없는 페이지 ─────────────────────────────────────────────── */
 .notfound { display: grid; align-content: center; justify-items: start; gap: 18px; min-height: 72vh; }
 .notfound h1 { font-size: clamp(28px, 4.4vw, 46px); font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
@@ -132,4 +157,8 @@ img, svg, canvas { display: block; }
   .tile-top { grid-template-columns: minmax(0, 1fr); }
   .tile-icon { order: -1; }
   .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+}
+@media (max-width: 860px) {
+  .doc-cols { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .toc { position: static; }
 }
