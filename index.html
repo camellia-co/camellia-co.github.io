@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>카멜리아 (Camellia)</title>
+<meta name="description" content="카멜리아는 일상에서 쓰는 모바일 앱을 만듭니다. 첫 번째 앱 로또리의 출시를 준비하고 있습니다.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="카멜리아 (Camellia)">
+<meta property="og:title" content="카멜리아 (Camellia)">
+<meta property="og:description" content="카멜리아는 일상에서 쓰는 모바일 앱을 만듭니다.">
+<meta property="og:url" content="https://camellia-co.github.io/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+  // '동작 줄이기'를 켠 사람에게는 스크롤 연출 없이 보여 준다
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.className = 'js';
+</script>
+</head>
+<body>
+
+<svg class="logo-symbols" aria-hidden="true">
+  <symbol id="camLogo" viewBox="12 78 661 100">
+    <g fill="currentColor" fill-rule="evenodd">
+      <path d="M98.59 96.3A47.38 47.38 0 1 0 98.59 159.7L82.87 145.54A26.22 26.22 0 1 1 82.87 110.46Z"/>
+      <path d="M105.03 174L139.07 82L159.31 82L193.35 174L171.27 174L163.78 153.76L134.6 153.76L127.11 174ZM149.19 114.29L157.65 137.2L140.73 137.2Z"/>
+      <path d="M201.63 174L201.63 82L223.71 82L252.23 131.4L280.75 82L302.83 82L302.83 174L282.59 174L282.59 119.2L260.51 157.44L243.95 157.44L221.87 119.2L221.87 174Z"/>
+      <path d="M318.47 82L382.87 82L382.87 99.48L338.71 99.48L338.71 118.34L375.51 118.34L375.51 135.82L338.71 135.82L338.71 156.52L382.87 156.52L382.87 174L318.47 174Z"/>
+      <path d="M396.67 82L416.91 82L416.91 156.52L455.55 156.52L455.55 174L396.67 174Z"/>
+      <path d="M467.51 82L487.75 82L487.75 156.52L526.39 156.52L526.39 174L467.51 174Z"/>
+      <path d="M541.59 93.05A13.76 13.76 0 0 1 568.87 93.05L564.86 124.74A9.71 9.71 0 1 1 545.6 124.74Z"/>
+      <path d="M580.39 174L614.43 82L634.67 82L668.71 174L646.63 174L639.14 153.76L609.96 153.76L602.47 174ZM624.55 114.29L633.02 137.2L616.09 137.2Z"/>
+    </g>
+    <path style="fill:var(--flower, #B81F36)" fill-rule="evenodd" d="M547.58 149.87A8.46 8.46 0 0 1 562.88 149.87A8.46 8.46 0 0 1 567.61 164.42A8.46 8.46 0 0 1 555.23 173.42A8.46 8.46 0 0 1 542.85 164.42A8.46 8.46 0 0 1 547.58 149.87ZM551.85 160.4A3.38 3.38 0 1 1 558.61 160.4A3.38 3.38 0 1 1 551.85 160.4Z"/>
+  </symbol>
+</svg>
+
+<main>
+  <section class="story" aria-label="카멜리아 소개">
+    <div class="stage">
+      <canvas class="gl" aria-hidden="true"></canvas>
+      <canvas class="paper" aria-hidden="true"></canvas>
+
+      <header class="head">
+        <a href="/" aria-label="카멜리아 처음으로"><svg class="head-logo" aria-hidden="true"><use href="#camLogo" width="100%" height="100%"/></svg></a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="#lottory">앱</a>
+          <a href="#company">회사 정보</a>
+          <a href="mailto:lottory.support@gmail.com">문의</a>
+        </nav>
+      </header>
+
+      <div class="cue" aria-hidden="true"><span>아래로 스크롤</span><i></i></div>
+
+      <div class="cap cap-1"><h1>카멜리아는 일상에서 쓰는 모바일 앱을 만듭니다.</h1></div>
+      <div class="cap cap-2" aria-hidden="true"><p>첫 번째 앱</p><p class="cap-name">로또리</p></div>
+    </div>
+  </section>
+
+  <section class="info" id="lottory">
+    <div class="wrap">
+      <div class="tile">
+        <div class="tile-top">
+          <div>
+            <h2>로또리</h2>
+            <p class="tile-meta">Android, 출시 준비 중</p>
+            <p class="tile-desc">로또 번호 추천, 당첨 확인, 구매 기록 관리를 돕는 앱입니다. 복권을 판매하지 않습니다.</p>
+            <!-- 개인정보처리방침과 계정 삭제 안내 페이지가 준비되면 여기에 링크를 넣는다 -->
+          </div>
+          <img class="tile-icon" src="/assets/img/lottory-icon.png" width="512" height="512" alt="로또리 앱 아이콘">
+        </div>
+        <ul class="feats">
+          <li><strong>번호 추천</strong><span>이번 회차에 쓸 번호를 추천받습니다.</span></li>
+          <li><strong>당첨 번호와 통계</strong><span>회차별 당첨 번호와 번호별 통계를 봅니다.</span></li>
+          <li><strong>구매 기록</strong><span>구매한 복권을 QR 코드로 등록하고 당첨 여부를 확인합니다.</span></li>
+          <li><strong>판매점 찾기</strong><span>가까운 복권 판매점을 지도에서 찾습니다.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+  <footer class="foot" id="company">
+    <svg class="foot-logo" role="img" aria-label="Camellia"><use href="#camLogo" width="100%" height="100%"/></svg>
+    <p class="biz">
+      <span>상호<em>카멜리아 (Camellia)</em></span>
+      <span>대표<em>이종필</em></span>
+      <span>사업자등록번호<em>497-29-02144</em></span>
+      <span>문의<em><a class="ulink" href="mailto:lottory.support@gmail.com">lottory.support@gmail.com</a></em></span>
+    </p>
+    <p>© 2026 Camellia</p>
+  </footer>
+</div>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

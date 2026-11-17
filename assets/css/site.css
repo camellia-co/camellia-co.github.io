@@ -1,0 +1,135 @@
+/* 카멜리아 사이트 공통 스타일 */
+
+:root {
+  --ink: #15191F;
+  --red: #B81F36;
+  --red-on-dark: #D93A50;
+  --text: #F5F5F7;
+  --text-2: #A1A1A6;
+  --text-3: #6E6E73;
+  --tile: #161617;
+  --line: #2C2C2E;
+  --pad: clamp(20px, 4.2vw, 48px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #000; color: var(--text);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 16px; font-weight: 400; line-height: 1.7; letter-spacing: -.005em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  word-break: keep-all;
+}
+p, h1, h2, h3, ul, li { margin: 0; padding: 0; font-weight: inherit; font-size: inherit; list-style: none; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 6px; }
+img, svg, canvas { display: block; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--pad); }
+.logo-symbols { position: absolute; width: 0; height: 0; }
+
+/* ── 스크롤 연출: 로고의 점 속으로 들어가면 우주가 나온다 ─────── */
+.story { height: 500vh; }
+.stage {
+  position: sticky; top: 0; overflow: hidden;
+  height: 100vh; height: 100dvh;
+  background: #fff;
+}
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.stage .paper { z-index: 1; }
+
+.head {
+  position: absolute; z-index: 3; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; padding: 0 var(--pad);
+  color: var(--ink); transition: color .35s ease;
+}
+.stage.is-dark .head { color: #fff; }
+.head-logo { width: 112px; height: 17px; opacity: 0; --flower: var(--red-on-dark); }
+.nav { display: flex; gap: clamp(20px, 3vw, 36px); font-size: 15px; }
+.nav a { opacity: .7; transition: opacity .15s; }
+.nav a:hover { opacity: 1; }
+
+.cue {
+  position: absolute; z-index: 3; left: 0; right: 0; bottom: 34px;
+  display: grid; justify-items: center; gap: 10px;
+  font-size: 13px; color: #8E9196;
+}
+.cue i {
+  display: block; width: 1px; height: 34px; transform-origin: top;
+  background: linear-gradient(#8E9196, rgba(142, 145, 150, 0));
+  animation: cue 2s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+@keyframes cue {
+  0% { transform: scaleY(0); }
+  55% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+.cap {
+  position: absolute; z-index: 2; left: 0; right: 0; padding: 0 var(--pad);
+  text-align: center; opacity: 0; will-change: opacity, transform;
+}
+.cap-1 { bottom: clamp(48px, 9%, 84px); }
+.cap-1 h1 { font-size: clamp(26px, 4vw, 46px); font-weight: 600; line-height: 1.28; letter-spacing: -.035em; text-wrap: balance; }
+.cap-2 { top: 66%; }
+.cap-2 p { font-size: clamp(15px, 1.5vw, 18px); color: var(--text-2); }
+.cap-2 .cap-name { margin-top: 2px; font-size: clamp(40px, 6.4vw, 76px); font-weight: 600; line-height: 1.15; letter-spacing: -.04em; color: var(--text); }
+
+/* 스크립트가 꺼져 있거나 '동작 줄이기'를 켠 경우: 연출 없이 한 화면으로 보여 준다 */
+.no-js .story { height: auto; }
+.no-js .stage { position: relative; display: grid; place-items: center; height: auto; min-height: 72vh; background: #000; }
+.no-js .stage canvas, .no-js .cue, .no-js .cap-2 { display: none; }
+.no-js .head { color: #fff; }
+.no-js .head-logo { opacity: 1; }
+.no-js .cap-1 { position: static; opacity: 1; padding: 120px var(--pad); }
+
+/* ── 앱 정보 ─────────────────────────────────────────────────── */
+.info { padding-top: clamp(8px, 2vw, 24px); scroll-margin-top: 24px; }
+.tile { background: var(--tile); border-radius: 28px; padding: clamp(28px, 5.2vw, 68px); }
+.tile-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center; }
+.tile h2 { font-size: clamp(30px, 4.2vw, 46px); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
+.tile-meta { margin-top: 8px; font-size: 15px; color: var(--text-3); }
+.tile-desc { margin-top: 22px; max-width: 22em; font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.65; color: var(--text-2); text-wrap: pretty; }
+.tile-icon { width: clamp(88px, 16vw, 176px); height: auto; aspect-ratio: 1; border-radius: 22.5%; }
+.feats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;
+  margin-top: clamp(36px, 5vw, 60px); padding-top: clamp(28px, 3.4vw, 40px);
+  border-top: 1px solid var(--line);
+}
+.feats strong { display: block; font-size: 16.5px; font-weight: 600; letter-spacing: -.02em; }
+.feats span { display: block; margin-top: 6px; font-size: 15px; line-height: 1.6; color: var(--text-2); }
+
+/* ── 바닥: 회사 정보 ─────────────────────────────────────────── */
+.foot {
+  display: grid; gap: 14px;
+  margin-top: clamp(64px, 9vw, 120px); padding: 30px 0 40px;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px; color: var(--text-3);
+}
+.foot-logo { width: 93px; height: 14px; color: var(--text); --flower: var(--red-on-dark); }
+.biz { display: flex; flex-wrap: wrap; gap: 2px 24px; }
+.biz em { font-style: normal; color: var(--text-2); margin-left: 6px; }
+.ulink {
+  text-decoration: underline; text-decoration-color: #48484A; text-decoration-thickness: 1px;
+  text-underline-offset: 4px; transition: text-decoration-color .15s;
+}
+.ulink:hover { text-decoration-color: var(--text); }
+
+/* ── 없는 페이지 ─────────────────────────────────────────────── */
+.notfound { display: grid; align-content: center; justify-items: start; gap: 18px; min-height: 72vh; }
+.notfound h1 { font-size: clamp(28px, 4.4vw, 46px); font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
+.notfound p { color: var(--text-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media (max-width: 720px) {
+  .head { height: 60px; }
+  .tile { border-radius: 22px; }
+  .tile-top { grid-template-columns: minmax(0, 1fr); }
+  .tile-icon { order: -1; }
+  .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+}
