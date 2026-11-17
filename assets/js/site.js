@@ -18,9 +18,6 @@
   const cue = stage.querySelector('.cue');
   const cap1 = stage.querySelector('.cap-1');
   const cap2 = stage.querySelector('.cap-2');
-  // 기기에서 '동작 줄이기'(Windows 의 애니메이션 효과 끄기 등)를 켠 경우:
-  // 스크롤에 따라 움직이는 연출은 그대로 두고, 행성이 스스로 도는 움직임만 멈춘다.
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const TAU = Math.PI * 2, RAD = Math.PI / 180;
   const clamp01 = (v) => Math.max(0, Math.min(1, v));
@@ -328,7 +325,8 @@
     if (rect.bottom <= 0) return;   // 연출 구간을 지나 보이지 않으면 그리지 않는다
     const max = rect.height - H;
     const p = max > 0 ? clamp01(-rect.top / max) : 0;
-    if (space && p > 0.03) space.render(p, reduce ? 0 : (now - t0) / 1000);
+    // 행성은 기기의 '동작 줄이기' 설정과 상관없이 항상 돈다
+    if (space && p > 0.03) space.render(p, (now - t0) / 1000);
     const open = drawPaper(p);
 
     stage.classList.toggle('is-dark', open > 0.72);
