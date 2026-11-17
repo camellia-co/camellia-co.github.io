@@ -92,6 +92,13 @@ img, svg, canvas { display: block; }
 .tile h2 { font-size: clamp(30px, 4.2vw, 46px); font-weight: 600; line-height: 1.2; letter-spacing: -.035em; }
 .tile-meta { margin-top: 8px; font-size: 15px; color: var(--text-3); }
 .tile-desc { margin-top: 22px; max-width: 22em; font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.65; color: var(--text-2); text-wrap: pretty; }
+.tile-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.pill {
+  display: inline-flex; align-items: center; height: 44px; padding: 0 20px;
+  background: #232325; border: 1px solid #3A3A3C; border-radius: 999px; font-size: 15px;
+  transition: border-color .15s;
+}
+.pill:hover { border-color: var(--text); }
 .tile-icon { width: clamp(88px, 16vw, 176px); height: auto; aspect-ratio: 1; border-radius: 22.5%; }
 .feats {
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;
