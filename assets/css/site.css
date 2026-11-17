@@ -77,7 +77,7 @@ img, svg, canvas { display: block; }
 .cap-2 p { font-size: clamp(15px, 1.5vw, 18px); color: var(--text-2); }
 .cap-2 .cap-name { margin-top: 2px; font-size: clamp(40px, 6.4vw, 76px); font-weight: 600; line-height: 1.15; letter-spacing: -.04em; color: var(--text); }
 
-/* 스크립트가 꺼져 있거나 '동작 줄이기'를 켠 경우: 연출 없이 한 화면으로 보여 준다 */
+/* 스크립트가 꺼져 있는 경우: 연출 없이 한 화면으로 보여 준다 */
 .no-js .story { height: auto; }
 .no-js .stage { position: relative; display: grid; place-items: center; height: auto; min-height: 72vh; background: #000; }
 .no-js .stage canvas, .no-js .cue, .no-js .cap-2 { display: none; }
