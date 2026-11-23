@@ -154,7 +154,13 @@ img, svg, canvas { display: block; }
 .doc-sec ol > li { list-style: decimal; }
 .doc-sec li + li { margin-top: 6px; }
 .doc-sec li::marker { color: var(--text-3); }
-.doc-sec strong { font-weight: 600; color: var(--text); }
+.doc-sec strong, .doc-note strong { font-weight: 600; color: var(--text); }
+/* 아직 정해지지 않은 내용. 확정되면 span을 걷어내고 내용을 채운다 */
+.doc-todo {
+  padding: 1px 6px; border: 1px dashed var(--text-3); border-radius: 6px;
+  font-size: .92em; color: var(--text-3);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
 
 /* ── 없는 페이지 ─────────────────────────────────────────────── */
 .notfound { display: grid; align-content: center; justify-items: start; gap: 18px; min-height: 72vh; }
